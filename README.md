@@ -18,7 +18,7 @@ Este projeto foi feito utilizando as seguintes tecnologias:
 
 ```bash
 # Acesse a pasta do projeto
-$ cd dt-money
+$ cd dtmoney
 ```
 
 ```bash
