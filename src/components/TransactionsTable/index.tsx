@@ -2,6 +2,7 @@ import { useTransactions } from "../../hooks/useTransactions";
 import api from "../../services/api";
 import { Container } from "./styles";
 import { FaTrash } from "react-icons/fa";
+import { Button } from "../Button";
 
 export function TransactionsTable() {
     const { transactions } = useTransactions();
@@ -25,7 +26,7 @@ export function TransactionsTable() {
                         <th>Valor</th>
                         <th>Categoria</th>
                         <th>Data</th>
-                        <th>Deletar</th>
+                        <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,17 +41,19 @@ export function TransactionsTable() {
                             </td>
                             <td>{transaction.category}</td>
                             <td>
-                                {new Intl.DateTimeFormat("pt-BR").format(
-                                    new Date(transaction.date)
-                                )}
+                                {new Intl.DateTimeFormat("pt-BR",
+                                    { dateStyle: 'full', timeStyle: 'short', timeZone: 'America/Sao_Paulo' }).format(
+                                        new Date(transaction.date)
+                                    )}
                             </td>
                             <td>
-                                <button
+                                <Button
                                     type="button"
+                                    color={'red'}
                                     onClick={() => deleteOrder(transaction.id)}
                                 >
                                     Deletar <FaTrash />
-                                </button>
+                                </Button>
                             </td>
                         </tr>
                     ))}

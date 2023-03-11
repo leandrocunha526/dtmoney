@@ -7,5 +7,4 @@ export interface ITransaction {
     category: string;
     amount: number;
     date: string;
-    createdAt?: string;
 }

@@ -1,5 +1,5 @@
 import { TransactionsProvider } from "./hooks/useTransactions";
-import Dashboard from "./Pages/Dashboard";
+import Dashboard from "./pages/Dashboard";
 import { GlobalStyle } from "./styles/global";
 import { Route, Routes } from "react-router-dom";
 

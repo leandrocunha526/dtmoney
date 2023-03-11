@@ -30,15 +30,5 @@ export const Container = styled.div`
                 color: var(--red);
             }
         }
-        button{
-            font-size: 13;
-            width: 165px;
-            height: 35px;
-            background-color: var(--red);
-            padding: 9px 50px;
-            border: none;
-            color: white;
-            border-radius: 0.5rem;
-        }
     }
 `;

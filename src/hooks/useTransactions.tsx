@@ -11,7 +11,7 @@ import { ITransaction } from "./interfaces/ITransactions";
 
 type ITransactionInput = Pick<
     ITransaction,
-    "title" | "type" | "amount" | "category" | "date" | "createdAt"
+    "title" | "type" | "amount" | "category" | "date"
 >;
 
 interface TransactionsProviderProps {
