@@ -24,6 +24,7 @@ export function EditForm() {
         api.put(`/update/${id}/`, data).then(() => {
             alert("Salvo com sucesso");
             navigate("/");
+            history.go();
         }).catch(error => {
             console.log(error)
         })
@@ -52,9 +53,11 @@ export function EditForm() {
             />
             {errors.title && errors.title.type === "required" && <span style={{ color: "red" }}>Título é um campo obrigatório</span>}
             <input
-                type="number"
+                type="text"
                 id="amount"
-                {...register("amount", { required: true })}
+                {...register("amount", {
+                    required: true
+                })}
                 placeholder="Valor"
             />
             {errors.amount && errors.amount.type === "required" && <span style={{ color: "red" }}>Valor é um campo obrigatório</span>}

@@ -2,7 +2,7 @@ import { TransactionsProvider } from "./hooks/useTransactions";
 import Dashboard from "./pages/Dashboard";
 import { GlobalStyle } from "./styles/global";
 import { Route, Routes } from "react-router-dom";
-import { EditForm } from "./pages/EditFormModel";
+import { EditForm } from "./pages/EditForm";
 
 function App() {
 
