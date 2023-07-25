@@ -6,21 +6,35 @@ import { Container } from "./styles";
 
 export function Summary() {
     const { transactions } = useTransactions();
-    const summary = transactions.reduce((acc, transaction) => {
-        if (transaction.type === 'deposit') {
-            acc.deposits += transaction.amount;
-            acc.total += transaction.amount;
-        } else {
-            acc.withdraw += transaction.amount;
-            acc.total -= transaction.amount;
-        }
+    // Ensure transactions array is valid
+    if (!Array.isArray(transactions)) {
+      return null; // or handle the error gracefully
+    }
 
-        return acc;
-    }, {
-        deposits: 0,
-        withdraw: 0,
-        total: 0
-    });
+    const summary = transactions.reduce(
+        (acc, transaction) => {
+            const amount = Number(transaction.amount); // Ensure amount is converted to a number
+
+            if (isNaN(amount)) {
+                return acc; // Skip the transaction if amount is NaN
+            }
+
+            if (transaction.type === 'deposit') {
+                acc.deposits += amount;
+                acc.total += amount;
+            } else {
+                acc.withdraw += amount;
+                acc.total -= amount;
+            }
+
+            return acc;
+        },
+        {
+            deposits: 0,
+            withdraw: 0,
+            total: 0,
+        }
+    );
     return (
         <Container>
             <div>

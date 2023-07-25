@@ -5,6 +5,6 @@ export interface ITransaction {
     title: string;
     type: TransactionTypes;
     category: string;
-    amount: number;
+    amount: string;
     date: string;
 }

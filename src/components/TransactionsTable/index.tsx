@@ -40,7 +40,7 @@ export function TransactionsTable() {
                                 {new Intl.NumberFormat("pt-BR", {
                                     style: "currency",
                                     currency: "BRL",
-                                }).format(transaction.amount)}
+                                }).format(Number(transaction.amount))}
                             </td>
                             <td>{transaction.category}</td>
                             <td>
@@ -52,7 +52,7 @@ export function TransactionsTable() {
                             <td>
                                 <Button
                                     type="button"
-                                    color={'red'}
+                                    color={'#FF6347'}
                                     onClick={() => deleteOrder(transaction.id)}
                                 >
                                     Deletar <FaTrash />
@@ -77,7 +77,7 @@ export function TransactionsTable() {
                         <tr>
                             <td style={{ textAlign: "center" }} colSpan={5}>
                                 <AiOutlineInfoCircle />
-                                <h5>Não há nenhuma transação</h5>
+                                <h3>Não há nenhuma transação</h3>
                             </td>
                         </tr>
                     }

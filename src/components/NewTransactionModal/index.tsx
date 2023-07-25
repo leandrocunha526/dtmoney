@@ -18,7 +18,7 @@ export function NewTransactionModal({
     const { createTransaction } = useTransactions();
 
     const [title, setTitle] = useState("");
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState("");
     const [category, setCategory] = useState("");
     const [type, setType] = useState<TransactionTypes>("deposit");
     const [date, setDate] = useState("");
@@ -35,7 +35,7 @@ export function NewTransactionModal({
         });
 
         setTitle("");
-        setAmount(0);
+        setAmount("");
         setCategory("");
         setType("deposit");
         setDate("");
@@ -70,7 +70,7 @@ export function NewTransactionModal({
                     id="amount"
                     placeholder="Valor"
                     value={amount}
-                    onChange={(event) => setAmount(Number(event.target.value))}
+                    onChange={(event) => setAmount(event.target.value)}
                 />
                 <TransactionTypeContainer>
                     <RadioBox
